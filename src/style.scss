@@ -23,6 +23,10 @@ $highlight-string: "%23D8315B";
   color: $primary;
   font-family: 'Noto Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+  li {
+    list-style: none;
+  }
+
   // outline: 1px solid red;
 }
 
@@ -93,7 +97,6 @@ header {
       li {
         width: 5rem;
         text-align: center;
-        list-style: none;
 
         a {
           text-decoration: none;
@@ -302,6 +305,56 @@ section#skills-section {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+
+section#research-section {
+  background-color: $light;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  #research-content {
+    width: 80%;
+    margin: 50px;
+    padding-bottom: 20vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+        .research-card {
+          padding: 2rem;
+          max-width: 950px;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          border: 2px $dark solid;
+
+          box-shadow: 20px 20px 1px 0px $primary;
+          box-shadow: 20px 20px 1px 0px #0A2463;
+
+          h4 {
+            font-weight: normal;
+          }
+  
+          b {
+            font-weight: bold;
+            color: $highlight;
+          }
+
+          p {
+            color: $dark;
+          }
+        }
+    }
+  }
+}
+
 
 footer {
   flex-shrink: 0;
