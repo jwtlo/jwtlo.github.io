@@ -1,9 +1,12 @@
 /* style.scss */
+@use "sass:string";
 
 $light: #F5F4F5;
-$dark: #1E1B18;
+$dark: #3E1B18;
 $primary: #0A2463;
+$primary-string: "%230A2463";
 $secondary: #3E92CC;
+$secondary-string: "%233E92CC";
 $highlight: #D8315B;
 
 @font-face {
@@ -119,10 +122,13 @@ header {
 
 main {
   flex: 1 0 auto;
+}
+
+section {
   padding: 3rem;
 }
 
-section#introduction {
+section#introduction-section {
   display: flex;
   flex-direction: row;
   gap: 5rem;
@@ -198,6 +204,130 @@ section#introduction {
   }
 }
 
+#section-separator-1 {
+  height: 30vw;
+  margin-top: 5rem;
+  // background-image: linear-gradient($light, $light 50%, $primary);
+
+  // Hard-coded
+  // background-image: url("data:image/svg+xml;utf8,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><polygon points='100,0, 100,100, 0,100, 100,0' fill='%230A2463' stroke-width='0'/></svg>");
+
+  // One color triangle or parallelogram
+  // $pre_var: "data:image/svg+xml;utf8,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><polygon points='100,0, 100,100, 0,100, 100,0' fill='' stroke-width='0'/></svg>";
+  // $pre_var: "data:image/svg+xml;utf8,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><polygon points='100,0, 0,50, 0,100, 100,70, 100,0' fill='' stroke-width='0'/></svg>";
+  // $replace_idx: string.index($pre_var, "' stroke-width");
+  // $post_var: string.insert($pre_var, $primary-string, $replace_idx_1);
+  // background-image: url(string.quote($post_var));
+
+  // Two colors
+  $pre_var: "data:image/svg+xml;utf8,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><polygon points='100,0, 0,50, 0,95, 100,60, 100,0' stroke-width='0' fill='' data-1='' /><polygon points='100,60, 0,95, 0,100, 100,70, 100,60' stroke-width='0' fill='' data-2='' /></svg>";
+  $replace_idx_1: string.index($pre_var, "' data-1");
+  $post_var_1: string.insert($pre_var, $primary-string, $replace_idx_1);
+  $replace_idx_2: string.index($post_var_1, "' data-2");
+  $post_var_2: string.insert($post_var_1, $secondary-string, $replace_idx_2);
+  background-image: url(string.quote($post_var_2));
+  
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+section#skills-section {
+  padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  // gap: 2rem;
+
+  // background-color: #DDDDDD;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .skills-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .skill-card {
+    height: 10rem;
+    width: 7rem;
+    margin: 1rem 0;
+    padding-top: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    // background-color: #ececec;
+    background-color: $light;
+    box-shadow: 1px 1px 5px rgb(9, 0, 48);
+
+    &:hover {
+      height: 12rem;
+      width: 8rem;
+      margin: 0;
+      box-shadow: 3px 3px 10px rgb(6, 0, 33);
+    }
+    transition: all 0.25s 0.05s ease;
+  }
+  
+
+  .skill-icon-wrapper {
+    height: 75%;
+    width: 100%;
+    padding: 0 1rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .skill-icon {
+    height: 75%;
+    // width: 75%;
+    display: inline;
+    // height: 10%;
+    // width: 50px;
+  }
+
+  .skill-name {
+    text-align: center;
+    justify-self: end
+  }
+}
+
+#section-separator-2 {
+  height: 30vw;
+  margin-top: 5rem;
+  // background-image: linear-gradient($light, $light 50%, $primary);
+
+  // Hard-coded
+  // background-image: url("data:image/svg+xml;utf8,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><polygon points='100,0, 100,100, 0,100, 100,0' fill='%230A2463' stroke-width='0'/></svg>");
+
+  // One color triangle or parallelogram
+  // $pre_var: "data:image/svg+xml;utf8,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><polygon points='100,0, 100,100, 0,100, 100,0' fill='' stroke-width='0'/></svg>";
+  // $pre_var: "data:image/svg+xml;utf8,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><polygon points='100,0, 0,50, 0,100, 100,70, 100,0' fill='' stroke-width='0'/></svg>";
+  // $replace_idx: string.index($pre_var, "' stroke-width");
+  // $post_var: string.insert($pre_var, $primary-string, $replace_idx_1);
+  // background-image: url(string.quote($post_var));
+
+  // Two colors
+  $pre_var: "data:image/svg+xml;utf8,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><polygon points='100,0, 0,50, 0,100, 100,60, 100,0' stroke-width='0' fill='' data-1='' /><polygon points='100,60, 0,100, 100,70, 100,60' stroke-width='0' fill='' data-2='' /></svg>";
+  $replace_idx_1: string.index($pre_var, "' data-1");
+  $post_var_1: string.insert($pre_var, $primary-string, $replace_idx_1);
+  $replace_idx_2: string.index($post_var_1, "' data-2");
+  $post_var_2: string.insert($post_var_1, $secondary-string, $replace_idx_2);
+  background-image: url(string.quote($post_var_2));
+  
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
 footer {
   flex-shrink: 0;
   width: 100%;
@@ -212,9 +342,8 @@ footer {
 }
 
 
-
 @media screen and (max-width: 768px) {
-  section#introduction {
+  section#introduction-section {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
