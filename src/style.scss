@@ -62,7 +62,7 @@ header {
 
   h1 {
     box-sizing: border-box;
-    padding: 2rem 0;
+    padding: 2rem 0 1rem;
     text-align: center;
 
 
@@ -74,7 +74,7 @@ header {
 
   #title-name-chinese {
     position: relative;
-    top: 4px;
+    top: 15px;
     display: flex;
     flex-direction: column;
     gap: 0rem;
@@ -84,42 +84,44 @@ header {
       line-height: 0.95;
     }
   }
+}
 
-  nav {
-    width: 100%;
+nav {
+  width: 100%;
+  padding-top: 1rem;
+  border-bottom: 5px solid $primary;
 
-    ul {
-      display: flex;
-      flex-direction: row;
-      justify-content: right;
-      gap: 1rem;
+  position: sticky;
+  top: 0;
+  background-color: $light;
+  z-index: 100;
 
-      li {
-        width: 5rem;
-        text-align: center;
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    gap: 1rem;
 
-        a {
-          text-decoration: none;
-          color: $primary;
+    li {
+      margin: 0 0.5rem;
+      text-align: center;
 
-          &:hover {
-            color: $secondary;
-            font-weight: 500;
-          }
+      a {
+        text-decoration: none;
+        color: $primary;
 
-          &:active {
-            color: $highlight;
-            font-weight: 600;
-          }
+        &:hover {
+          color: $secondary;
+          font-weight: 500;
+        }
+
+        &:active {
+          color: $highlight;
+          font-weight: 600;
         }
       }
     }
   }
-}
-
-#horizontal-line {
-  width: 100%;
-  border-bottom: 5px solid $primary;
 }
 
 main {
