@@ -209,7 +209,7 @@ section#introduction-section {
   margin-top: 5rem;
 
   // Two colors
-  $pre_var: "data:image/svg+xml;utf8,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><polygon points='100,0, 0,50, 0,95, 100,60, 100,0' stroke-width='0' fill='' data-1='' /><polygon points='100,60, 0,95, 0,100, 100,70, 100,60' stroke-width='0' fill='' data-2='' /></svg>";
+  $pre_var: "data:image/svg+xml;utf8,<svg preserveAspectRatio='none' width='100' height='100' xmlns='http://www.w3.org/2000/svg'><polygon points='100,0, 0,50, 0,95, 100,60, 100,0' stroke-width='0' fill='' data-1='' /><polygon points='100,60, 0,95, 0,100, 100,70, 100,60' stroke-width='0' fill='' data-2='' /></svg>";
   $replace_idx_1: string.index($pre_var, "' data-1");
   $post_var_1: string.insert($pre_var, $primary-string, $replace_idx_1);
   $replace_idx_2: string.index($post_var_1, "' data-2");
@@ -306,7 +306,7 @@ section#skills-section {
   margin-top: 5rem;
 
   // Two colors
-  $pre_var: "data:image/svg+xml;utf8,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><polygon points='100,0, 0,50, 0,100, 100,100, 100,0' stroke-width='0' fill='' data-1='' /><polygon points='100,0, 0,50, 0,60, 100,10, 100,20' stroke-width='0' fill='' data-2='' /><polygon points='100,10, 0,60, 0,80, 100,30, 100,10' stroke-width='0' fill='' data-3='' /><polygon points='0,80, 44,57, 100,80, 100,85, 44,62, 0,85' stroke-width='0' fill='' data-4='' /><polygon points='0,20, 100,50, 100,80, 0,40, 0,20' stroke-width='0' fill='' data-5='' /></svg>";
+  $pre_var: "data:image/svg+xml;utf8,<svg preserveAspectRatio='none' width='100' height='100' xmlns='http://www.w3.org/2000/svg'><polygon points='100,0, 0,50, 0,100, 100,100, 100,0' stroke-width='0' fill='' data-1='' /><polygon points='100,0, 0,50, 0,60, 100,10, 100,20' stroke-width='0' fill='' data-2='' /><polygon points='100,10, 0,60, 0,80, 100,30, 100,10' stroke-width='0' fill='' data-3='' /><polygon points='0,80, 44,57, 100,80, 100,85, 44,62, 0,85' stroke-width='0' fill='' data-4='' /><polygon points='0,20, 100,50, 100,80, 0,40, 0,20' stroke-width='0' fill='' data-5='' /></svg>";
   $replace_idx_1: string.index($pre_var, "' data-1");
   $post_var_1: string.insert($pre_var, $light-string, $replace_idx_1);
   $replace_idx_2: string.index($post_var_1, "' data-2");
